@@ -7,8 +7,6 @@ import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
  function RenderDishDetail({dish}) {
        
             return(
-                <div className="row">
-                  
                     <Card>
                     <CardImg width="100%" src={dish.image} alt={dish.name} />
                         <CardBody className="text-left">
@@ -16,8 +14,7 @@ import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
                             <CardText>{dish.description}</CardText>
                         </CardBody>
                     </Card>
-                  
-                </div>
+                
             );
        
 
@@ -29,14 +26,15 @@ import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
         return(
         <div className="container">
         <div className="row">
-        <div className="col-6">
+                  <div className="col-12 col-md-5 m-1">
         <RenderDishDetail dish={props.dish}></RenderDishDetail>
         </div>
-        <div className="col-6">
+     <div className="col-12 col-md-5 m-1">
         <RenderComments comments_array={props.dish.comments}></RenderComments>
         </div>
         </div>
-                    </div>);
+        </div>
+                    );
                 }else{
                     return(<div></div>);
                 }
