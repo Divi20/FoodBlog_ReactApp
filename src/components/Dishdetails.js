@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardBody, CardText, CardTitle,Breadcrumb,BreadcrumbItem } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 
 
@@ -21,16 +22,26 @@ import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
 
     }
 
-    const Dishdetails = (props) => {
+    const DishDetails = (props) => {
         if(props.dish != null){
         return(
         <div className="container">
         <div className="row">
+        <Breadcrumb>
+
+        <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+        <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+    </Breadcrumb>
+    <div className="col-12">
+        <h3>{props.dish.name}</h3>
+        <hr />
+    </div>     
+         
                   <div className="col-12 col-md-5 m-1">
         <RenderDishDetail dish={props.dish}></RenderDishDetail>
         </div>
      <div className="col-12 col-md-5 m-1">
-        <RenderComments comments_array={props.dish.comments}></RenderComments>
+        <RenderComments comments_array={props.comments}></RenderComments>
         </div>
         </div>
         </div>
@@ -67,4 +78,4 @@ import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
     }
 
 
-export default Dishdetails;
+export default DishDetails;
