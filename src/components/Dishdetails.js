@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardText, CardTitle,Breadcrumb,BreadcrumbItem } from 'reactstrap';
 import {Link} from 'react-router-dom';
+import CommentForm from './CommentForm';
 
 
 
@@ -41,7 +42,9 @@ import {Link} from 'react-router-dom';
         <RenderDishDetail dish={props.dish}></RenderDishDetail>
         </div>
      <div className="col-12 col-md-5 m-1">
-        <RenderComments comments_array={props.comments}></RenderComments>
+        <RenderComments comments_array={props.comments}
+        addComment={props.addComment}
+        dishId = {props.dish.id}></RenderComments>
         </div>
         </div>
         </div>
@@ -51,7 +54,7 @@ import {Link} from 'react-router-dom';
                 }
     }
 
-   function RenderComments({comments_array}) {
+   function RenderComments({comments_array,addComment,dishId}) {
 
         if(comments_array != null){
 
@@ -69,6 +72,7 @@ import {Link} from 'react-router-dom';
                             </li>
                             ) } 
                     </ul>
+                    <CommentForm></CommentForm>
                 </div>
                
             );
