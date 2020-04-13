@@ -64,7 +64,7 @@ import { baseUrl } from './shared/baseURL';
         </div>
      <div className="col-12 col-md-5 m-1">
         <RenderComments comments_array={props.comments}
-        addComment={props.addComment}
+        postComment={props.postComment}
         dishId = {props.dish.id}></RenderComments>
         </div>
         </div>
@@ -75,7 +75,7 @@ import { baseUrl } from './shared/baseURL';
                 }
     }
 
-   function RenderComments({comments_array,addComment,dishId}) {
+   function RenderComments({comments_array,postComment,dishId}) {
 
         if(comments_array != null){
 
@@ -93,7 +93,7 @@ import { baseUrl } from './shared/baseURL';
                             </li>
                             ) } 
                     </ul>
-                    <CommentForm dishId = {dishId} addComment={addComment}></CommentForm>
+                    <CommentForm dishId = {dishId}  postComment={postComment}></CommentForm>
                 </div>
                
             );
