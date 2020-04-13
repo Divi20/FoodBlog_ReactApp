@@ -3,7 +3,7 @@ import { Card, CardImg, CardBody, CardText, CardTitle,Breadcrumb,BreadcrumbItem 
 import {Link} from 'react-router-dom';
 import CommentForm from './CommentForm';
 import { Loading } from './LoadingComponent';
-
+import { baseUrl } from './shared/baseURL';
 
 
 
@@ -11,7 +11,7 @@ import { Loading } from './LoadingComponent';
        
             return(
                     <Card>
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
+                    <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                         <CardBody className="text-left">
                             <CardTitle>{dish.name}</CardTitle>
                             <CardText>{dish.description}</CardText>
