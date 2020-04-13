@@ -24,9 +24,8 @@ class CommentForm extends Component{
         this.setState({isModalOpen:!this.state.isModalOpen});
     }
     handleSubmitComment(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
         alert('Current State is: ' + JSON.stringify(values));
-        // event.preventDefault();
+      this.props.addComment(this.props.dishId,values.rating,values.yourname,values.comment)
     }
 render(){
     return(
